@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Message class for the QuickChat application.
- * Handles message creation, validation, sending, storing, and display.
- */
+// Message class for the QuickChat application. Handles message creation, validation, sending, storing, and display.
 public class Message {
 
     private String messageID;
