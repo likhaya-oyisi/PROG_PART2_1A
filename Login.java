@@ -29,10 +29,7 @@ public class Login {
         return username.contains("_") && username.length() <= 5;
     }
 
-    /**
-     * Checks password complexity:
-     * at least 8 chars, one capital, one number, one special character.
-     */
+    // Checks password complexity at least 8 chars, one capital, one number, one special character.
     public boolean checkPasswordComplexity() {
         if (password == null || password.length() < 8) return false;
 
@@ -45,18 +42,13 @@ public class Login {
         return hasCapital && hasNumber && hasSpecial;
     }
 
-    /**
-     * Checks cell phone number format using a regular expression.
-     * Must start with '+' followed by up to 10 digits.
-     */
+    // Checks cell phone number format using a regular expression. Must start with '+' followed by up to 10 digits.
     public boolean checkCellPhoneNumber() {
         if (cellPhoneNumber == null) return false;
         return cellPhoneNumber.matches("^\\+\\d{1,10}$");
     }
 
-    /**
-     * Registers the user after validating all fields.
-     */
+    // Registers the user after validating all fields
     public String registerUser() {
         if (!checkUserName()) {
             return "Username is not correctly formatted; please ensure that your username " +
@@ -82,18 +74,14 @@ public class Login {
                 "Registration successful!";
     }
 
-    /**
-     * Returns true if the entered credentials match the registered credentials.
-     */
+    // Returns true if the entered credentials match the registered credentials
     public boolean loginUser() {
         if (registeredUsername == null || registeredPassword == null) return false;
         return this.username.equals(registeredUsername) &&
                 this.password.equals(registeredPassword);
     }
 
-    /**
-     * Returns the login status message.
-     */
+    // Returns the login status message
     public String returnLoginStatus() {
         if (loginUser()) {
             return "Welcome " + registeredFirstName + " " + registeredLastName +
